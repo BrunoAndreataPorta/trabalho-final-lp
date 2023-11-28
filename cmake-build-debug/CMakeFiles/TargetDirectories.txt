@@ -1,0 +1,3 @@
+C:/Users/Bruno AP/CLionProjects/trabalhoFinalLP/cmake-build-debug/CMakeFiles/trabalhoFinalLP.dir
+C:/Users/Bruno AP/CLionProjects/trabalhoFinalLP/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Bruno AP/CLionProjects/trabalhoFinalLP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
