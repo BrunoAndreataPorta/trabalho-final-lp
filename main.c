@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "controleEstoqueRoupas.h"
 
 p_vestuario v[MAX];
@@ -8,6 +9,7 @@ int main() {
     int id = 0;
     int opcao = 0;
     int pos = 0;
+    int repeticao = 0;
     char categoria[30] = "";
 
     do{
@@ -29,22 +31,62 @@ int main() {
                 id++;
                 break;
             case 2:
-                printf("Informe o ID do produto que deseja alterar o estoque:\n");
-                scanf("%d", &pos);
-                atualizarEstoque(pos);
+                if (id == 0){
+                    printf("Nenhum produto foi cadastrado ainda.\n");
+                    printf("Cadastre algum item antes!\n\n");
+                }else{
+                    printf("Informe o ID do produto que deseja atualizar o estoque:\n");
+                    scanf("%d", &pos);
+                    atualizarEstoque(pos);
+                }
                 break;
             case 3:
-                listarItens(id);
+                if (id == 0){
+                    printf("Nenhum item foi cadastrado ainda.\n");
+                    printf("Cadastre algum item antes!\n\n");
+                }else{
+                    listarItens(id);
+                }
                 break;
             case 4:
-                printf("Deseja procurar itens de qual categoria?\n");
+                printf("Deseja procurar qual das categorias de item?\n");
+                if(id == 0){
+                    printf("Nenhuma categoria cadastrada ainda.\n");
+                    printf("Cadastre algum item antes!\n\n");
+                    break;
+                }else{
+                    for(int i = 0; i<id; i++){
+                        repeticao = 0;
+                        if(i == 0){
+                            printf("%s\n", v[i]->categoria);
+                        }else{
+                            for(int x = 0; x<i; x++){
+                                if (strcmp(v[i]->categoria, v[x]->categoria) == 0){
+                                    repeticao = 1;
+                                    break;
+                                }else{
+                                    repeticao = 0;
+                                }
+                            }
+                            if(repeticao == 0){
+                                printf("%s\n", v[i]->categoria);
+                            }
+                        }
+                    }
+                    printf("\n");
+                }
                 scanf("%s", categoria);
                 listarPorCategoria(categoria, id);
                 break;
             case 5:
-                printf("Informe o ID do produto que deseja alterar as informacoes:\n");
-                scanf("%d", &pos);
-                alterarProduto(pos);
+                if (id == 0){
+                    printf("Nenhum produto foi cadastrado ainda.\n");
+                    printf("Cadastre algum item antes!\n\n");
+                }else{
+                    printf("Informe o ID do produto que deseja alterar as informacoes:\n");
+                    scanf("%d", &pos);
+                    alterarProduto(pos);
+                }
                 break;
             default:
                 printf("Opcao invalida\n\n");

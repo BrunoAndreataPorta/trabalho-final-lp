@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "controleEstoqueRoupas.h"
 
 void inicializar(){
@@ -26,7 +27,7 @@ void registrarTamanhoRoupa(int id){
         printf("Digite 2 - [M]\n");
         printf("Digite 3 - [G]\n");
         scanf("%s", resposta);
-
+        fflush(stdin);
         //Convertendo a string para um número inteiro
         tam = atoi(resposta);
 
@@ -46,7 +47,8 @@ void registrarTamanhoRoupa(int id){
 
 void adicionarNovoItem(int id){
     if (v[id]==NULL){
-        int tam = 0; //Variavel para identifcar o tamanho da camisa
+        int qtd = -1;
+        char resposta[10] = "";
         v[id] =  (p_vestuario)malloc(sizeof(vestuario)); //Alocando mémoria de maneira dinâmica para um novo struct no array 'v'
 
         v[id]->id = id;
@@ -55,8 +57,29 @@ void adicionarNovoItem(int id){
         printf("Informe a categoria do produto:\n");
         gets(v[id]->categoria);
 
-        printf("Informe a quantidade de roupas: \n");
-        scanf("%d", &v[id]->quantidade);
+        //Loop para verificar se valor informado para quantidade de roupas é valido
+        do{
+            fflush(stdin);
+            printf("Informe a quantidade de roupas: \n");
+            scanf("%s", resposta);
+
+            for (int i = 0; resposta[i] != '\0'; i++) {
+                if (!isdigit(resposta[i])) {
+                    strcpy(resposta, ""); //limpando o conteudo
+                    break;
+                }else{
+                    qtd = atoi(resposta);
+                }
+            }
+
+            if(qtd >= 0){
+                v[id]->quantidade = qtd;
+            }else{
+                printf("Valor informado invalido!\n");
+                printf("Tente novamente\n\n");
+                qtd = -1;
+            }
+        }while(qtd < 0);
 
         registrarTamanhoRoupa(id);
 
@@ -72,7 +95,7 @@ void atualizarEstoque(int pos){
     int newQtd;
     char *fimResp; //Ponteiro para o ultimo caractere após a conversão com strtol
     if (v[pos] == NULL){
-        printf("Nao existe nenhum produto cadastrado nesse ID\n");
+        printf("Nao existe nenhum produto cadastrado nesse ID\n\n");
     }else {
         listarUnicoItem(pos);
         printf("Digite o novo total de itens do produto ou algum numero negativo para cancelar a acao:\n");
@@ -83,12 +106,12 @@ void atualizarEstoque(int pos){
 
         if (*fimResp != '\0' && *fimResp != '\n') {
             //Caso o usuario tenha escrito letras a resposta não é valida
-            printf("Entrada invalida. Acao cancelada.\n");
+            printf("Entrada invalida. Acao cancelada.\n\n");
         }else if (newQtd >= 0){
             v[pos]->quantidade = newQtd;
-            printf("Valor atualizado com sucesso!\n");
+            printf("Valor atualizado com sucesso!\n\n");
         }else if(newQtd < 0){
-            printf("Acao cancelada.\n");
+            printf("Acao cancelada.\n\n");
         }
     }
 }
@@ -119,7 +142,7 @@ void listarPorCategoria(char categoria[30], int id){
 
 void alterarProduto(int pos){
     if (v[pos] == NULL){
-        printf("Nao existe nenhum produto cadastrado nesse ID\n");
+        printf("Nao existe nenhum produto cadastrado nesse ID\n\n");
     }else{
         int opcao = 0;
         do{
@@ -147,7 +170,7 @@ void alterarProduto(int pos){
             }else if(opcao == 0){
                 printf("Fim da acao.\n\n");
             }else{
-                printf("Opcao invalida.\n");
+                printf("Opcao invalida.\n\n");
             }
         }while(opcao != 0);
     }
