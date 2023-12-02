@@ -48,8 +48,17 @@ $git clone https://github.com/BrunoAndreataPorta/trabalho-final-lp.git
 <hr>
 
 <h2 id="autores">👨‍💻 Autores</h2>
+<p>Realizado pelos alunos de ADS do período noturno:</p>
 <p>Bruno Andreata Porta</p>
-
+</div>
+<a href = "mailto:bruno.porta@hotmail.com"><img loading="lazy" src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/bruno-andreata-porta-320327253/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
+</div>
+<br><br>
 <p>Gabriel Vinícius Costa Silva</p>
+</div>
+<a href = "mailto:bruno.porta@hotmail.com"><img loading="lazy" src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/bruno-andreata-porta-320327253/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
+</div>
 <hr>
 
