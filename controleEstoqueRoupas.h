@@ -64,6 +64,11 @@ void listarItens(int id);
  */
 void listarPorCategoria(char categoria[30], int id);
 
+/**
+ * Função permite alterar dados cadastrados no produto, como categoria, tamanho e descrição
+ *
+ * @param pos - Utilizado para saber o ID do produto que é desejado alterar
+ */
 void alterarProduto(int pos);
 
 #endif //TRABALHOFINALLP_CONTROLEESTOQUEROUPAS_H

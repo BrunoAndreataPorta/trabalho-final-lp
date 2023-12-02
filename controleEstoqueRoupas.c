@@ -49,7 +49,10 @@ void adicionarNovoItem(int id){
     if (v[id]==NULL){
         int qtd = -1;
         char resposta[10] = "";
-        v[id] =  (p_vestuario)malloc(sizeof(vestuario)); //Alocando mémoria de maneira dinâmica para um novo struct no array 'v'
+        /**
+         * Alocando mémoria de maneira dinâmica para um novo struct no array 'v'
+         */
+        v[id] =  (p_vestuario)malloc(sizeof(vestuario));
 
         v[id]->id = id;
 
