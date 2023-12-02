@@ -15,10 +15,16 @@
 <p>O projeto tem como objetivo realizar o cadastro de produtos de uma loja de roupa, afim de facilitar o controle de estoque. Com funções que permitem gerenciar eficientemente o estoque da loja de roupa.</p>
 
 <p>Projeto desenvolvido como trabalho final da matéria de Linguagem de Programação da FATEC Mogi Mirim - "Arthur de Azevedo".</p>
+
+<h3>📹 Video explicativo do projeto</h3>
+<p>Clique <a href="https://youtu.be/jgaH1K1MKX0" target="_blank">aqui</a> para assistir o vídeo.</p>
+<p>Ou acesse em: https://youtu.be/jgaH1K1MKX0.</p>
+
+
 <hr>
 <h2 id="funcionalidades">⚙️ Funcionalidades</h2>
 
-<p><strong>Cadastrar novo produto:</strong> verifica se o produto já existe com base em um ID fornecido, aloca dinamicamente memória para armazenar as informações do novo item e solicita ao usuário detalhes como categoria, quantidade, tamanhos de roupas e descrição.</p>
+<p><strong>Cadastrar novo produto:</strong> aloca dinamicamente memória para armazenar as informações do novo item e solicita ao usuário detalhes como categoria, quantidade, tamanhos de roupas e descrição.</p>
 <p><strong>Atualizar estoque de um produto:</strong>  permite a modificação da quantidade de itens em estoque para um produto específico. Ela verifica se o produto existe com base em um ID fornecido, exibe informações detalhadas sobre o produto, e solicita ao usuário que insira a nova quantidade desejada.
 <p><strong>Listar todos os itens:</strong> exibe todos os itens cadastrados no sistema de controle de estoque.
 <p><strong>Listar itens por categoria:</strong> exibe todos os produtos de uma determinada categoria no sistema de controle de estoque.
